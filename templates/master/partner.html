@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>業務夥伴主檔</h3>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>夥伴代碼</th>
+      <th>夥伴名稱</th>
+      <th>客戶</th>
+      <th>供應商</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for p in partners %}
+    <tr>
+      <td>{{ p.partner_id }}</td>
+      <td>{{ p.partner_name }}</td>
+      <td>{{ p.is_customer }}</td>
+      <td>{{ p.is_vendor }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
